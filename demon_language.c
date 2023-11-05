@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-deftype struct stack
+typedef struct stack
 {
     int size;
     int top;
