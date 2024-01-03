@@ -38,13 +38,36 @@ void Destorybinarytree(BTNode * T)
         Destorybinarytree(T->rchild);
         free(T);
     }
-    T=NULL;
 }
 
 void Createbinarytree(BTNode* T,char ch[],int p[])
 {
 
 }
+
+void Clearbinarytree(BTNode * T)
+{
+    if(T)
+    {
+        Clearbinarytree(T->lchild);
+        Clearbinarytree(T->rchild);
+        free(T);
+    }
+    T=NULL;
+}
+
+int Isempty(BTNode * T) 
+{
+    return T == NULL;
+}
+
+int BinarytreeDepth(BTNode * T) {
+    if (T == NULL) return 0;
+    int left_depth = BinarytreeDepth(T->lchild);
+    int right_depth = BinarytreeDepth(T->rchild);
+    return (left_depth > right_depth ? left_depth : right_depth) + 1;
+}
+
 
 int main()
 {
